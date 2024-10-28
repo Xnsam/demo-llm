@@ -30,3 +30,6 @@ jobs:
         context: .
         push: true
         tags: xnsam/demo-llm:latest
+
+    - name: log out from docker hub
+      run: docker logout
