@@ -1,19 +1,15 @@
-import requests
+from fastapi.testclient import TestClient
+from app import app
 
-# Define the API endpoint
-url = "http://0.0.0.0:8005/generate"
+client = TestClient(app)
 
-# Define the payload
-payload = {
-    "text": "Once upon a time"
-}
+def test_root():
+    response = client.get("/")
+    assert response.status_code == 200
+    assert response.json() == {"message": "Welcome to the LLM API"}
 
-# Make a POST request to the API
-response = requests.post(url, json=payload)
+def test_generate():
+    response = client.post("/generate", json={"text": "once upon a time"})
+    assert response.status_code == 200
+    assert "generated_text" in response.json()
 
-# Check the response status and print the generated text
-if response.status_code == 200:
-    print("Generated Text:", response.json()["generated_text"])
-else:
-    print("Failed to generate text. Status code:", response.status_code)
-    print("Response:", response.text)
