@@ -1,7 +1,7 @@
 import requests
 
 # Define the API endpoint
-url = "http://35.192.96.234:8005/generate"
+url = "http://localhost:8005/generate"
 
 # Define the payload
 payload = {
