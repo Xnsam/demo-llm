@@ -20,9 +20,6 @@ jobs:
     - name: install the dependencies
       run: |
          make install
-    - name: run the app
-      run: |
-        python app.py
     - name: run the test
       run: |
         make test
