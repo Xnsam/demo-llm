@@ -16,7 +16,7 @@ jobs:
       with:
         python-version: 3.9
     - name: check out the code
-      uses: actions/checkout-action@v4
+      uses: actions/checkout@v4
     - name: install the dependencies
       run: |
          make install
