@@ -1,7 +1,7 @@
 import requests
 import pytest
 
-def test_generate()
+def test_generate():
     # Define the API endpoint
     url = "http://0.0.0.0:8005/generate"
     
@@ -17,4 +17,5 @@ def test_generate()
     response_json = response.json()
     # Check the response status and print the generated text
     assert "generated_text" in response_json
-    assert isinstance(response_json["generated_text"])
+    assert isinstance(response_json["generated_text"], str)
+    print(response_json["generated_text"])
