@@ -22,7 +22,7 @@ jobs:
          make install
     - name: run the app
       run: |
-        uvicorn app.py
+        python app.py
     - name: run the test
       run: |
         make test
